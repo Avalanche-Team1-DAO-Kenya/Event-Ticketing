@@ -1,6 +1,4 @@
-import { JsonRpcProvider, Provider, Signer } from "ethers";
-import { ethers } from 'ethers';
-
+import { JsonRpcProvider, BrowserProvider, JsonRpcSigner } from "ethers";
 
 // Connect to the Avalanche C-Chain network
 export const getProvider = (): JsonRpcProvider => {
@@ -9,10 +7,11 @@ export const getProvider = (): JsonRpcProvider => {
 };
 
 // Function to get the signer from the browser's window.ethereum (for MetaMask)
-export const getSigner = (provider: Provider): Signer | null => {
+export const getSigner = async (provider: JsonRpcProvider): Promise<JsonRpcSigner | null> => {
   if (typeof window !== "undefined" && window.ethereum) {
-    const web3Provider = new ethers.providers.Web3Provider(window.ethereum);
-    return web3Provider.getSigner();
+    const browserProvider = new BrowserProvider(window.ethereum);  // Use BrowserProvider for MetaMask
+    const signer = await browserProvider.getSigner();  // Await the Promise to get the signer
+    return signer;
   } else {
     console.error("Ethereum provider not found. Please install MetaMask.");
     return null;
