@@ -1,4 +1,6 @@
 import { JsonRpcProvider, Provider, Signer } from "ethers";
+import { ethers } from 'ethers';
+
 
 // Connect to the Avalanche C-Chain network
 export const getProvider = (): JsonRpcProvider => {
