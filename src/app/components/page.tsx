@@ -1,8 +1,11 @@
-// components/Layout.js
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Link from 'next/link'; // Import Next.js Link component
 
-const Layout = ({ children }) => {
+interface LayoutProps {
+  children: ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header Section */}
@@ -10,13 +13,13 @@ const Layout = ({ children }) => {
         <nav>
           <ul className="flex space-x-8 justify-center">
             <li>
-              <Link href="/">
-                <a className="text-xl font-semibold">Home</a>
+              <Link href="/" className="text-xl font-semibold">
+                Home
               </Link>
             </li>
             <li>
-              <Link href="/about">
-                <a className="text-xl font-semibold">About</a>
+              <Link href="/about" className="text-xl font-semibold">
+                About
               </Link>
             </li>
             {/* Add other navigation links here */}
