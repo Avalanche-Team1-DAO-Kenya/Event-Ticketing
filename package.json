@@ -10,9 +10,14 @@
   },
   "dependencies": {
     "ethers": "^6.13.5",
+    "framer-motion": "^11.17.0",
+    "lucide-react": "^0.471.0",
+    "mdb-react-ui-kit": "^9.0.0",
     "next": "15.1.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router-dom": "^6.28.1",
+    "swiper": "^11.2.1",
     "web3": "^4.16.0"
   },
   "devDependencies": {

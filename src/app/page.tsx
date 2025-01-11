@@ -68,9 +68,7 @@ export default function Home() {
       <Link href="/page">Go to Layout</Link> {/* Corrected Link */}
      
 
-      <footer className="bg-blue-600 text-white text-center py-4">
-        <p>&copy; 2025 Evently. All rights reserved.</p>
-      </footer>
+    
     </div>
   );
 }
